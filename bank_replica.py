@@ -117,8 +117,8 @@ try:
             print(validate(f_name, l_name, mob_no, acct_no, password))
             if validate(f_name, l_name, mob_no,acct_no, password) == 0:
                 flag2 = 0
-        '''user1 = UserRegister(f_name, l_name, mob_no, acct_no, password)
-        user1.register()'''
+        user1 = UserRegister(f_name, l_name, mob_no, acct_no, password)
+        user1.register()
 
     elif value == '2':
 
