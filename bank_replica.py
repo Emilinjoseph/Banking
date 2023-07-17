@@ -13,19 +13,22 @@ myCursor = mydb.cursor()
 
 
 def validate(f_name, l_name, mob_no, password):
-
-    if re.match(r"^[a-zA-Z]*$", f_name) is None:
+    count = 0
+    if re.match(r"^[a-zA-Z]+$", f_name) is None :
         print(f_name, "Only letters allowed for first name")
+        count = count + 1
 
-    if re.match(r"^[a-zA-Z]*$", l_name) is None:
+    if re.match(r"^[a-zA-Z]+$", l_name) is None:
         print("Only letters allowed for last name")
+        count = count + 1
 
     if re.match(r"^\d{10}$", mob_no) is None:
         print("Please enter your correct mobile number(10 digit)")
+        count = count + 1
     if re.match(r"^\S{8,10}$", password) is None:
         print("Password length should be between 8 and 10. No spaces are allowed ")
-    else:
-        return 1
+        count = count + 1
+    return count
 
 
 class UserRegister:
@@ -106,7 +109,8 @@ try:
             mob_no = input("mobile_no : ")
             acct_no = input("account_no : ")
             password = pwinput.pwinput("Whats your password? :")
-            if validate(f_name, l_name, mob_no, password) == 1:
+            # print(validate(f_name, l_name, mob_no, password))
+            if validate(f_name, l_name, mob_no, password) == 0:
                 flag2 = 0
         user1 = UserRegister(f_name, l_name, mob_no, acct_no, password)
         user1.register()
@@ -114,6 +118,7 @@ try:
     elif value == '2':
 
         user_id = int(input("User_id : "))
+
         password = pwinput.pwinput("Whats your password? :")
 
         user1 = Login(user_id, password)
