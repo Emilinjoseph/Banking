@@ -114,7 +114,7 @@ try:
             mob_no = input("mobile_no : ")
             acct_no = input("account_no : ")
             password = pwinput.pwinput("Whats your password? :")
-            print(validate(f_name, l_name, mob_no, acct_no, password))
+            # print(validate(f_name, l_name, mob_no, acct_no, password))
             if validate(f_name, l_name, mob_no,acct_no, password) == 0:
                 flag2 = 0
         user1 = UserRegister(f_name, l_name, mob_no, acct_no, password)
