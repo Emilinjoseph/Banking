@@ -5,7 +5,7 @@ import pwinput
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="86emilin123#",
+    password="********123#",
     database="BANK_REPLICA"
 )
 
